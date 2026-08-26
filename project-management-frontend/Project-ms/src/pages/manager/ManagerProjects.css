@@ -1,0 +1,449 @@
+.manager-projects-page {
+    min-height: 100vh;
+    background: #f6f7fb;
+    padding: 50px 6%;
+    color: #20263a;
+}
+
+.manager-projects-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 40px;
+}
+
+.manager-label {
+    font-size: 14px;
+    letter-spacing: 2px;
+    font-weight: 700;
+    color: #777f9b;
+}
+
+.manager-projects-header h1 {
+    margin: 12px 0 8px;
+    font-size: 48px;
+    font-weight: 700;
+}
+
+.manager-projects-header p {
+    margin: 0;
+    color: #8c96ad;
+    font-size: 18px;
+}
+
+.refresh-button {
+    border: 1px solid #dfe2ec;
+    background: white;
+    color: #5146e5;
+    padding: 14px 20px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.refresh-button:hover {
+    background: #f4f2ff;
+}
+
+.error-box {
+    background: #fff0ef;
+    border: 1px solid #ffd1ce;
+    color: #d9534f;
+    padding: 15px 20px;
+    border-radius: 12px;
+    margin-bottom: 25px;
+}
+
+.projects-summary {
+    margin-bottom: 30px;
+}
+
+.summary-card {
+    background: white;
+    border: 1px solid #e1e4ed;
+    border-radius: 18px;
+    padding: 25px 30px;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    width: 280px;
+}
+
+.summary-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    background: #eeecff;
+    color: #5146e5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.summary-card span {
+    display: block;
+    color: #8c96ad;
+    margin-bottom: 5px;
+}
+
+.summary-card strong {
+    font-size: 28px;
+}
+
+.projects-container {
+    background: white;
+    border: 1px solid #e1e4ed;
+    border-radius: 22px;
+    padding: 35px;
+}
+
+.section-heading h2 {
+    margin: 0 0 7px;
+    font-size: 30px;
+}
+
+.section-heading p {
+    margin: 0 0 30px;
+    color: #929bb0;
+}
+
+.manager-project-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.manager-project-card {
+    border: 1px solid #e1e4ed;
+    border-radius: 18px;
+    padding: 25px;
+    cursor: pointer;
+    transition: 0.2s ease;
+    background: white;
+}
+
+.manager-project-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(40, 45, 80, 0.08);
+    border-color: #c9c5ff;
+}
+
+.project-card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 22px;
+}
+
+.project-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 13px;
+    background: #eeecff;
+    color: #5146e5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.status-badge {
+    padding: 7px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.status-badge.active {
+    background: #e9f8ee;
+    color: #3b9b5f;
+}
+
+.status-badge.completed {
+    background: #e9f0ff;
+    color: #4169d8;
+}
+
+.status-badge.pending {
+    background: #fff5df;
+    color: #b77a16;
+}
+
+.project-code {
+    color: #5146e5;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.manager-project-card h3 {
+    font-size: 21px;
+    margin: 10px 0;
+}
+
+.project-description {
+    color: #929bb0;
+    min-height: 42px;
+    line-height: 1.5;
+}
+
+.project-info {
+    border-top: 1px solid #edf0f5;
+    margin-top: 20px;
+    padding-top: 17px;
+    display: flex;
+    gap: 20px;
+    color: #7f899f;
+    font-size: 14px;
+}
+
+.project-info div {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.view-project {
+    margin-top: 20px;
+    color: #5146e5;
+    font-weight: 600;
+}
+
+.empty-state {
+    min-height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #8c96ad;
+    text-align: center;
+}
+
+.empty-state svg {
+    color: #5146e5;
+}
+
+.empty-state h3 {
+    color: #20263a;
+    margin-bottom: 5px;
+}
+
+@media (max-width: 1000px) {
+    .manager-project-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 700px) {
+    .manager-projects-page {
+        padding: 30px 20px;
+    }
+
+    .manager-projects-header {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .manager-projects-header h1 {
+        font-size: 36px;
+    }
+
+    .manager-project-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .projects-container {
+        padding: 22px;
+    }
+}
+/* =========================================
+   CREATE PROJECT FORM
+========================================= */
+
+.create-project-card {
+  background: #ffffff;
+  border: 1px solid #e0e4ed;
+  border-radius: 22px;
+  padding: 38px 40px 34px;
+  margin-bottom: 30px;
+  box-shadow: 0 12px 30px rgba(35, 40, 65, 0.06);
+}
+
+.create-project-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 30px;
+}
+
+.create-project-header h2 {
+  margin: 0 0 8px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 30px;
+  color: #20243a;
+}
+
+.create-project-header p {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 17px;
+  color: #8998b1;
+}
+
+.create-project-form {
+  width: 100%;
+}
+
+.create-project-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px 42px;
+}
+
+/* Labels */
+
+.create-project-card label {
+  display: block;
+  margin-bottom: 8px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: #30364d;
+}
+
+/* Inputs */
+
+.create-project-card input,
+.create-project-card select,
+.create-project-card textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12px 14px;
+
+  border: 1px solid #d9deea;
+  border-radius: 9px;
+
+  background: #ffffff;
+  color: #252a3e;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 15px;
+
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.create-project-card input:hover,
+.create-project-card select:hover,
+.create-project-card textarea:hover {
+  border-color: #b8c0d1;
+}
+
+.create-project-card input:focus,
+.create-project-card select:focus,
+.create-project-card textarea:focus {
+  border-color: #5146dc;
+  box-shadow: 0 0 0 3px rgba(81, 70, 220, 0.1);
+}
+
+/* Placeholder */
+
+.create-project-card input::placeholder,
+.create-project-card textarea::placeholder {
+  color: #9ca7b8;
+}
+
+/* Description */
+
+.create-project-card textarea {
+  min-height: 110px;
+  resize: vertical;
+  line-height: 1.5;
+}
+
+/* Description container */
+
+.create-project-form > div:nth-last-child(2) {
+  margin-top: 22px !important;
+}
+
+/* Bottom buttons */
+
+.create-project-form > div:last-child {
+  display: flex !important;
+  justify-content: flex-end !important;
+  align-items: center;
+  gap: 12px !important;
+  margin-top: 25px !important;
+}
+
+/* Buttons */
+
+.create-project-card button {
+  font-family: Georgia, "Times New Roman", serif;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+/* Cancel */
+
+.create-project-card button[type="button"] {
+  padding: 11px 20px;
+  border: 1px solid #d9deea !important;
+  border-radius: 9px;
+  background: #ffffff !important;
+  color: #555d70;
+}
+
+.create-project-card button[type="button"]:hover {
+  background: #f5f6fa !important;
+  border-color: #c5cad7 !important;
+}
+
+/* Create */
+
+.create-project-card button[type="submit"] {
+  padding: 11px 22px;
+  border: 1px solid #5146dc !important;
+  border-radius: 9px;
+  background: #5146dc !important;
+  color: #ffffff !important;
+  font-weight: 700;
+}
+
+.create-project-card button[type="submit"]:hover {
+  background: #4438c9 !important;
+  border-color: #4438c9 !important;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(81, 70, 220, 0.2);
+}
+
+/* Close button */
+
+.create-project-header button {
+  border: none !important;
+  background: transparent !important;
+  color: #20243a;
+  padding: 6px;
+}
+
+.create-project-header button:hover {
+  color: #5146dc;
+  transform: scale(1.08);
+}
+
+/* Responsive */
+
+@media (max-width: 800px) {
+  .create-project-card {
+    padding: 28px 22px;
+  }
+
+  .create-project-grid {
+    grid-template-columns: 1fr;
+  }
+}

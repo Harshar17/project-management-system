@@ -1,0 +1,33 @@
+# =========================
+# Frontend
+# =========================
+project-management-frontend/node_modules/
+project-management-frontend/dist/
+
+# =========================
+# Backend
+# =========================
+project-management-backend/target/
+
+# =========================
+# Environment files
+# =========================
+.env
+.env.*
+
+# =========================
+# IDE
+# =========================
+.vscode/
+.idea/
+
+# =========================
+# Logs
+# =========================
+*.log
+
+# =========================
+# OS
+# =========================
+.DS_Store
+Thumbs.db

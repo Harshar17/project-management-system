@@ -1,0 +1,324 @@
+.notifications-page {
+  min-height: 100vh;
+
+  padding: 40px 45px 60px;
+
+  background: #f7f8fc;
+
+  color: #20263a;
+}
+
+
+/* ========================================
+   HEADER
+======================================== */
+
+.notifications-header {
+  display: flex;
+
+  align-items: flex-start;
+  justify-content: space-between;
+
+  margin-bottom: 32px;
+}
+
+.notifications-label {
+  display: block;
+
+  margin-bottom: 9px;
+
+  color: #7e88a0;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  letter-spacing: 2px;
+}
+
+.notifications-header h1 {
+  margin: 0;
+
+  font-size: 38px;
+  line-height: 1.15;
+
+  letter-spacing: -0.6px;
+}
+
+.notifications-header p {
+  margin: 9px 0 0;
+
+  color: #8e98ae;
+
+  font-size: 16px;
+}
+
+
+/* ========================================
+   BUTTON
+======================================== */
+
+.mark-all-button {
+  display: flex;
+
+  align-items: center;
+  gap: 8px;
+
+  padding: 12px 17px;
+
+  border: 1px solid #dfe3ec;
+  border-radius: 10px;
+
+  background: #ffffff;
+
+  color: #5146e5;
+
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.mark-all-button:hover {
+  background: #f5f4ff;
+}
+
+
+/* ========================================
+   SUMMARY
+======================================== */
+
+.notification-summary {
+  display: flex;
+
+  align-items: center;
+
+  gap: 15px;
+
+  width: 260px;
+
+  padding: 20px;
+
+  margin-bottom: 22px;
+
+  border: 1px solid #e0e4ed;
+  border-radius: 15px;
+
+  background: #ffffff;
+}
+
+.notification-summary-icon {
+  width: 45px;
+  height: 45px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 12px;
+
+  background: #eeedff;
+
+  color: #5146e5;
+}
+
+.notification-summary span {
+  display: block;
+
+  margin-bottom: 4px;
+
+  color: #9099ae;
+
+  font-size: 12px;
+}
+
+.notification-summary strong {
+  font-size: 20px;
+
+  color: #252b3d;
+}
+
+
+/* ========================================
+   CARD
+======================================== */
+
+.notifications-card {
+  background: #ffffff;
+
+  border: 1px solid #e0e4ed;
+
+  border-radius: 17px;
+
+  overflow: hidden;
+
+  box-shadow: 0 5px 18px rgba(31, 38, 60, 0.035);
+}
+
+.notifications-card-header {
+  padding: 25px 28px;
+
+  border-bottom: 1px solid #edf0f5;
+}
+
+.notifications-card-header h2 {
+  margin: 0;
+
+  font-size: 22px;
+
+  color: #252b3d;
+}
+
+.notifications-card-header p {
+  margin: 6px 0 0;
+
+  color: #9099ae;
+
+  font-size: 13px;
+}
+
+
+/* ========================================
+   NOTIFICATION ITEM
+======================================== */
+
+.notification-item {
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 16px;
+
+  padding: 21px 28px;
+
+  border-bottom: 1px solid #edf0f5;
+
+  transition: background 0.2s ease;
+}
+
+.notification-item:last-child {
+  border-bottom: none;
+}
+
+.notification-item:hover {
+  background: #fafaff;
+}
+
+.notification-item.unread {
+  background: #fbfaff;
+}
+
+
+/* ========================================
+   ICON
+======================================== */
+
+.notification-icon {
+  width: 43px;
+  height: 43px;
+
+  flex-shrink: 0;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 12px;
+
+  background: #eeedff;
+
+  color: #5146e5;
+}
+
+
+/* ========================================
+   CONTENT
+======================================== */
+
+.notification-content {
+  min-width: 0;
+
+  flex: 1;
+}
+
+.notification-title-row {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+}
+
+.notification-title-row strong {
+  font-size: 15px;
+
+  color: #252b3d;
+}
+
+.notification-content p {
+  margin: 5px 0;
+
+  color: #7f899f;
+
+  font-size: 13px;
+
+  line-height: 1.45;
+}
+
+.notification-time {
+  color: #a0a7b7;
+
+  font-size: 11px;
+}
+
+.unread-dot {
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: #5146e5;
+}
+
+
+/* ========================================
+   RESPONSIVE
+======================================== */
+
+@media (max-width: 700px) {
+
+  .notifications-page {
+    padding: 28px 18px 40px;
+  }
+
+  .notifications-header {
+    flex-direction: column;
+
+    gap: 18px;
+  }
+
+  .notifications-header h1 {
+    font-size: 32px;
+  }
+
+  .mark-all-button {
+    width: 100%;
+
+    justify-content: center;
+  }
+
+  .notification-summary {
+    width: 100%;
+
+    box-sizing: border-box;
+  }
+
+  .notifications-card-header,
+  .notification-item {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+}

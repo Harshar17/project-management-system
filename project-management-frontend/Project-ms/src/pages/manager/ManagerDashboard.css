@@ -1,0 +1,1095 @@
+/* =========================================================
+   MANAGER DASHBOARD
+   ========================================================= */
+
+.manager-dashboard {
+    min-height: 100vh;
+    box-sizing: border-box;
+
+    padding: 40px 5%;
+
+    background: #f6f7fb;
+    color: #202638;
+
+    font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.manager-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 16px;
+    margin-bottom: 32px;
+}
+
+.manager-header > div:first-child {
+    flex: 1;
+}
+
+.manager-date {
+    margin: 0 0 7px;
+
+    color: #5146e5;
+
+    font-size: 11px;
+    font-weight: 800;
+
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+}
+
+.manager-header h1 {
+    margin: 0;
+
+    font-size: 38px;
+    line-height: 1.15;
+    font-weight: 750;
+
+    letter-spacing: -0.7px;
+}
+
+.manager-subtitle {
+    margin: 9px 0 0;
+
+    color: #929aae;
+
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   HEADER BUTTONS
+   ========================================================= */
+
+.refresh-button,
+.logout-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    min-height: 40px;
+
+    padding: 10px 16px;
+
+    border-radius: 9px;
+
+    font-size: 13px;
+    font-weight: 650;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        color 0.2s ease,
+        transform 0.15s ease;
+}
+
+.refresh-button {
+    border: 1px solid #dfe3eb;
+
+    background: #ffffff;
+    color: #5146e5;
+}
+
+.refresh-button:hover:not(:disabled) {
+    background: #f5f3ff;
+    border-color: #cfcaff;
+}
+
+.refresh-button:active:not(:disabled),
+.logout-button:active {
+    transform: translateY(1px);
+}
+
+.refresh-button:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+}
+
+
+/* LOGOUT */
+
+.logout-button {
+    border: 1px solid #ffd4d4;
+
+    background: #fff5f5;
+    color: #d95353;
+}
+
+.logout-button:hover {
+    background: #ffeaea;
+    border-color: #ffbcbc;
+}
+
+
+/* =========================================================
+   LOADING SPINNER
+   ========================================================= */
+
+.spin {
+    animation: manager-spin 0.9s linear infinite;
+}
+
+@keyframes manager-spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* =========================================================
+   ERROR
+   ========================================================= */
+
+.manager-error {
+    margin-bottom: 24px;
+
+    padding: 14px 18px;
+
+    border: 1px solid #ffd4d4;
+    border-radius: 10px;
+
+    background: #fff0f0;
+    color: #d95353;
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   STAT CARDS
+   ========================================================= */
+
+.manager-stats {
+    display: grid;
+
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+
+    gap: 18px;
+
+    margin-bottom: 28px;
+}
+
+.manager-stat-card {
+    display: flex;
+    align-items: center;
+
+    gap: 15px;
+
+    min-width: 0;
+
+    padding: 21px;
+
+    background: #ffffff;
+
+    border: 1px solid #e3e6ef;
+    border-radius: 17px;
+
+    box-shadow:
+        0 2px 8px rgba(32, 38, 56, 0.025);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.manager-stat-card:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 22px rgba(32, 38, 56, 0.07);
+}
+
+
+/* STAT ICON */
+
+.manager-stat-icon {
+    flex: 0 0 46px;
+
+    width: 46px;
+    height: 46px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 12px;
+}
+
+.manager-stat-icon.purple {
+    background: #efedff;
+    color: #5146e5;
+}
+
+.manager-stat-icon.blue {
+    background: #eaf4ff;
+    color: #3d82d6;
+}
+
+.manager-stat-icon.green {
+    background: #eaf8ef;
+    color: #36945a;
+}
+
+.manager-stat-icon.orange {
+    background: #fff4e5;
+    color: #d28a22;
+}
+
+
+/* STAT CONTENT */
+
+.manager-stat-content {
+    min-width: 0;
+}
+
+.manager-stat-content span {
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: #929aae;
+
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.manager-stat-content strong {
+    display: block;
+
+    font-size: 25px;
+    line-height: 1.15;
+
+    font-weight: 750;
+}
+
+.manager-stat-content small {
+    display: block;
+
+    margin-top: 5px;
+
+    color: #a2a8b7;
+
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   MAIN GRID
+   ========================================================= */
+
+.manager-content-grid {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1.65fr)
+        minmax(300px, 0.95fr);
+
+    gap: 22px;
+
+    margin-bottom: 24px;
+}
+
+
+/* =========================================================
+   GENERAL CARD
+   ========================================================= */
+
+.manager-card {
+    min-width: 0;
+
+    padding: 27px;
+
+    background: #ffffff;
+
+    border: 1px solid #e3e6ef;
+    border-radius: 19px;
+
+    box-shadow:
+        0 2px 8px rgba(32, 38, 56, 0.025);
+}
+
+
+/* =========================================================
+   CARD HEADER
+   ========================================================= */
+
+.manager-card-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    gap: 15px;
+
+    margin-bottom: 20px;
+}
+
+.manager-card-header h2 {
+    margin: 0;
+
+    font-size: 21px;
+    line-height: 1.25;
+
+    font-weight: 720;
+}
+
+.manager-card-header p {
+    margin: 6px 0 0;
+
+    color: #929aae;
+
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   VIEW ALL
+   ========================================================= */
+
+.manager-view-all {
+    display: inline-flex;
+    align-items: center;
+
+    gap: 5px;
+
+    padding: 7px 10px;
+
+    border: none;
+    border-radius: 8px;
+
+    background: transparent;
+
+    color: #5146e5;
+
+    font-size: 12px;
+    font-weight: 650;
+
+    cursor: pointer;
+
+    white-space: nowrap;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease;
+}
+
+.manager-view-all:hover {
+    background: #f5f3ff;
+}
+
+
+/* =========================================================
+   EMPTY / LOADING
+   ========================================================= */
+
+.manager-empty {
+    min-height: 230px;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    color: #929aae;
+}
+
+.manager-empty svg {
+    color: #5146e5;
+}
+
+.manager-empty h3 {
+    margin: 13px 0 5px;
+
+    color: #202638;
+
+    font-size: 17px;
+}
+
+.manager-empty p {
+    margin: 6px 0 0;
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   PENDING TIMESHEETS
+   ========================================================= */
+
+.manager-timesheet-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.manager-timesheet-row {
+    display: grid;
+
+    grid-template-columns:
+        42px
+        minmax(130px, 1.4fr)
+        minmax(100px, 1fr)
+        65px
+        auto;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 17px 3px;
+
+    border-bottom: 1px solid #edf0f4;
+}
+
+.manager-timesheet-row:last-child {
+    border-bottom: none;
+}
+
+
+/* EMPLOYEE AVATAR */
+
+.employee-avatar {
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #efedff;
+    color: #5146e5;
+
+    font-size: 11px;
+    font-weight: 750;
+}
+
+
+/* EMPLOYEE INFO */
+
+.manager-timesheet-info {
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 4px;
+}
+
+.manager-timesheet-info strong {
+    overflow: hidden;
+
+    color: #202638;
+
+    font-size: 13px;
+
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.manager-timesheet-info span {
+    color: #929aae;
+
+    font-size: 11px;
+}
+
+
+/* DATE */
+
+.manager-timesheet-date {
+    display: flex;
+    flex-direction: column;
+
+    gap: 4px;
+
+    min-width: 0;
+}
+
+.manager-timesheet-date span {
+    color: #a0a6b5;
+
+    font-size: 10px;
+}
+
+.manager-timesheet-date strong {
+    color: #555e72;
+
+    font-size: 12px;
+    font-weight: 600;
+}
+
+
+/* HOURS */
+
+.manager-hours {
+    text-align: right;
+}
+
+.manager-hours strong {
+    display: block;
+
+    color: #202638;
+
+    font-size: 15px;
+}
+
+.manager-hours span {
+    display: block;
+
+    margin-top: 3px;
+
+    color: #929aae;
+
+    font-size: 10px;
+}
+
+
+/* PENDING BADGE */
+
+.pending-badge {
+    width: fit-content;
+
+    padding: 6px 10px;
+
+    border-radius: 20px;
+
+    background: #fff5df;
+    color: #d28a22;
+
+    font-size: 10px;
+    font-weight: 750;
+
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+
+/* =========================================================
+   QUICK ACTIONS
+   ========================================================= */
+
+.manager-actions {
+    display: flex;
+    flex-direction: column;
+
+    gap: 9px;
+}
+
+.manager-action {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns: 42px minmax(0, 1fr) auto;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 13px;
+
+    border: 1px solid #edf0f4;
+    border-radius: 12px;
+
+    background: #ffffff;
+    color: #202638;
+
+    text-align: left;
+
+    cursor: pointer;
+
+    font-family: inherit;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.manager-action:hover {
+    background: #fafaff;
+    border-color: #dcd9fa;
+
+    transform: translateX(2px);
+}
+
+.manager-action > svg {
+    color: #a0a6b5;
+}
+
+
+/* ACTION ICON */
+
+.action-icon {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 11px;
+}
+
+.action-icon.purple {
+    background: #efedff;
+    color: #5146e5;
+}
+
+.action-icon.blue {
+    background: #eaf4ff;
+    color: #3d82d6;
+}
+
+.action-icon.green {
+    background: #eaf8ef;
+    color: #36945a;
+}
+
+
+/* ACTION TEXT */
+
+.manager-action > div:nth-child(2) {
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 4px;
+}
+
+.manager-action strong {
+    overflow: hidden;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.manager-action span {
+    overflow: hidden;
+
+    color: #929aae;
+
+    font-size: 11px;
+
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+
+/* =========================================================
+   TEAM SUMMARY
+   ========================================================= */
+
+.manager-summary-card {
+    display: flex;
+    align-items: center;
+
+    gap: 18px;
+
+    padding: 23px 26px;
+
+    background: #ffffff;
+
+    border: 1px solid #e3e6ef;
+    border-radius: 18px;
+
+    box-shadow:
+        0 2px 8px rgba(32, 38, 56, 0.025);
+}
+
+
+/* SUMMARY ICON */
+
+.summary-icon {
+    flex: 0 0 46px;
+
+    width: 46px;
+    height: 46px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 12px;
+
+    background: #efedff;
+    color: #5146e5;
+}
+
+
+/* SUMMARY TEXT */
+
+.summary-text {
+    flex: 1;
+
+    min-width: 0;
+}
+
+.summary-text h2 {
+    margin: 0;
+
+    font-size: 18px;
+    font-weight: 720;
+}
+
+.summary-text p {
+    margin: 5px 0 0;
+
+    max-width: 750px;
+
+    color: #929aae;
+
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+
+/* SUMMARY BUTTON */
+
+.summary-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 7px;
+
+    flex-shrink: 0;
+
+    padding: 10px 15px;
+
+    border: none;
+    border-radius: 9px;
+
+    background: #5146e5;
+    color: #ffffff;
+
+    font-family: inherit;
+
+    font-size: 12px;
+    font-weight: 650;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        transform 0.15s ease;
+}
+
+.summary-button:hover {
+    background: #4238c5;
+}
+
+.summary-button:active {
+    transform: translateY(1px);
+}
+
+
+/* =========================================================
+   BUTTON RESET / ACCESSIBILITY
+   ========================================================= */
+
+.manager-action,
+.manager-view-all,
+.summary-button,
+.refresh-button,
+.logout-button {
+    -webkit-tap-highlight-color: transparent;
+}
+
+.manager-action:focus-visible,
+.manager-view-all:focus-visible,
+.summary-button:focus-visible,
+.refresh-button:focus-visible,
+.logout-button:focus-visible {
+    outline: 3px solid rgba(81, 70, 229, 0.18);
+    outline-offset: 2px;
+}
+
+
+/* =========================================================
+   LARGE TABLET
+   ========================================================= */
+
+@media (max-width: 1200px) {
+
+    .manager-dashboard {
+        padding: 34px 4%;
+    }
+
+    .manager-stats {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .manager-content-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .actions-card {
+        order: -1;
+    }
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 850px) {
+
+    .manager-dashboard {
+        padding: 30px 22px;
+    }
+
+    .manager-header {
+        flex-wrap: wrap;
+    }
+
+    .manager-header > div:first-child {
+        flex-basis: 100%;
+    }
+
+    .manager-header h1 {
+        font-size: 34px;
+    }
+
+    .manager-timesheet-row {
+        grid-template-columns:
+            42px
+            1fr
+            1fr
+            auto;
+
+        gap: 12px;
+    }
+
+    .manager-hours {
+        text-align: left;
+    }
+
+    .pending-badge {
+        grid-column: 2 / -1;
+    }
+
+    .manager-summary-card {
+        align-items: flex-start;
+        flex-wrap: wrap;
+    }
+
+    .summary-text {
+        flex: 1 1 calc(100% - 70px);
+    }
+
+    .summary-button {
+        margin-left: 64px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    .manager-dashboard {
+        padding: 24px 16px;
+    }
+
+    .manager-header {
+        display: grid;
+
+        grid-template-columns: 1fr 1fr;
+
+        gap: 10px;
+
+        margin-bottom: 25px;
+    }
+
+    .manager-header > div:first-child {
+        grid-column: 1 / -1;
+    }
+
+    .manager-header h1 {
+        font-size: 30px;
+    }
+
+    .manager-subtitle {
+        font-size: 13px;
+    }
+
+    .refresh-button,
+    .logout-button {
+        width: 100%;
+    }
+
+    .manager-stats {
+        grid-template-columns: 1fr;
+
+        gap: 12px;
+
+        margin-bottom: 20px;
+    }
+
+    .manager-stat-card {
+        padding: 18px;
+    }
+
+    .manager-card {
+        padding: 20px 17px;
+
+        border-radius: 16px;
+    }
+
+    .manager-card-header {
+        align-items: flex-start;
+    }
+
+    .manager-card-header h2 {
+        font-size: 19px;
+    }
+
+    .manager-view-all {
+        padding: 6px 7px;
+    }
+
+    .manager-timesheet-row {
+        display: grid;
+
+        grid-template-columns: 40px 1fr;
+
+        gap: 10px 12px;
+
+        padding: 16px 2px;
+    }
+
+    .employee-avatar {
+        grid-row: span 2;
+    }
+
+    .manager-timesheet-info {
+        grid-column: 2;
+    }
+
+    .manager-timesheet-date {
+        grid-column: 2;
+    }
+
+    .manager-hours {
+        grid-column: 2;
+
+        text-align: left;
+    }
+
+    .pending-badge {
+        grid-column: 2;
+
+        justify-self: start;
+    }
+
+    .manager-action {
+        grid-template-columns: 40px minmax(0, 1fr) auto;
+
+        padding: 12px;
+    }
+
+    .action-icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    .manager-summary-card {
+        padding: 19px;
+
+        gap: 13px;
+    }
+
+    .summary-icon {
+        flex: 0 0 42px;
+
+        width: 42px;
+        height: 42px;
+    }
+
+    .summary-text {
+        flex-basis: calc(100% - 55px);
+    }
+
+    .summary-text h2 {
+        font-size: 17px;
+    }
+
+    .summary-button {
+        width: 100%;
+
+        margin-left: 0;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 380px) {
+
+    .manager-dashboard {
+        padding: 20px 12px;
+    }
+
+    .manager-header h1 {
+        font-size: 27px;
+    }
+
+    .manager-stat-card {
+        padding: 16px;
+    }
+
+    .manager-stat-icon {
+        width: 42px;
+        height: 42px;
+        flex-basis: 42px;
+    }
+
+    .manager-stat-content strong {
+        font-size: 22px;
+    }
+
+    .manager-card {
+        padding: 17px 14px;
+    }
+
+    .manager-card-header {
+        flex-direction: column;
+    }
+
+    .manager-view-all {
+        align-self: flex-start;
+    }
+}
