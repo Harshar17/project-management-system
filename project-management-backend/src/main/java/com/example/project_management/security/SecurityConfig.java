@@ -39,7 +39,8 @@ public class SecurityConfig {
 
 		CorsConfiguration configuration = new CorsConfiguration();
 
-		configuration.setAllowedOrigins(List.of("http://localhost:5173"));
+		configuration.setAllowedOrigins(
+				List.of("http://localhost:5173", "https://project-management-system-one-chiv.vercel.app"));
 
 		configuration.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
 
@@ -87,8 +88,7 @@ public class SecurityConfig {
 
 						// Everything else
 						// Everything else
-						.requestMatchers("/").permitAll()
-						.anyRequest().authenticated())
+						.requestMatchers("/").permitAll().anyRequest().authenticated())
 
 				.addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);
 
