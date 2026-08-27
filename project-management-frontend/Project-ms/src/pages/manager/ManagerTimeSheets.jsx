@@ -15,7 +15,7 @@ import {
     rejectTimesheet
 } from "../../services/api";
 
-import "./ManagerTimesheets.css";
+import "./ManagerTimeSheets.css";
 
 
 function ManagerTimesheets() {
