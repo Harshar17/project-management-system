@@ -39,9 +39,11 @@ public class SecurityConfig {
 
 		CorsConfiguration configuration = new CorsConfiguration();
 
-		configuration.setAllowedOrigins(List.of("http://localhost:5173",
-				"https://project-management-system-k92yrshda-harsha-s-team2.vercel.app",
-				"https://project-management-system-one-chiv.vercel.app"));
+		configuration.setAllowedOrigins(List.of(
+		        "http://localhost:5173",
+		        "https://project-management-system-k92yrshda-harsha-s-team2.vercel.app",
+		        "https://project-management-system-one-chi.vercel.app"
+		));
 
 		configuration.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
 
