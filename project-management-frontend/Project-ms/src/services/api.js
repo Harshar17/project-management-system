@@ -1,4 +1,4 @@
-const API_BASE_URL = "http://localhost:8081/api";
+const API_BASE_URL = "https://project-management-system-production-35ad.up.railway.app/api";
 
 // ========================================
 // LOGIN
@@ -459,7 +459,7 @@ export async function rejectTimesheet(id, comment = "") {
 }
 
 export async function register(data) {
-  const response = await fetch("http://localhost:8081/api/auth/register", {
+  const response = await fetch("https://project-management-system-production-35ad.up.railway.app/api/auth/register", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

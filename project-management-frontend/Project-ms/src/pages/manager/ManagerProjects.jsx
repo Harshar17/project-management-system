@@ -11,7 +11,7 @@ import { useNavigate } from "react-router-dom";
 
 import "./ManagerProjects.css";
 
-const API_BASE_URL = "http://localhost:8081/api";
+const API_BASE_URL = "https://project-management-system-production-35ad.up.railway.app/api";
 
 function ManagerProjects() {
   const navigate = useNavigate();

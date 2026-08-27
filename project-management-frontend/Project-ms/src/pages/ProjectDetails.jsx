@@ -12,7 +12,7 @@ import {
 
 import "./ProjectDetails.css";
 
-const API_BASE_URL = "http://localhost:8081/api";
+const API_BASE_URL = "https://project-management-system-production-35ad.up.railway.app/api";
 
 function ProjectDetails() {
   const { id } = useParams();

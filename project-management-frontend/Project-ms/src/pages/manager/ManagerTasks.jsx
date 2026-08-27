@@ -13,7 +13,7 @@ import { createTask } from "../../services/api";
 
 import "./ManagerTasks.css";
 
-const API_BASE_URL = "http://localhost:8081/api";
+const API_BASE_URL = "https://project-management-system-production-35ad.up.railway.app/api";
 
 function ManagerTasks() {
   const [tasks, setTasks] = useState([]);
