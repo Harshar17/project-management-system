@@ -17,7 +17,7 @@ import {
     deleteTimesheet
 } from "../services/api";
 
-import "./Timesheets.css";
+import "./TimeSheets.css";
 
 
 function Timesheets() {
