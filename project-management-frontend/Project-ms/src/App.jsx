@@ -5,7 +5,7 @@ import EmployeeDashboard from "./pages/employee/EmployeeDashboard";
 import Projects from "./pages/Projects";
 import ProjectDetails from "./pages/ProjectDetails";
 import Tasks from "./pages/Tasks";
-import Timesheets from "./pages/Timesheets";
+import Timesheets from "./pages/TimeSheets";
 import ManagerTimesheets from "./pages/manager/ManagerTimeSheets";
 import ManagerDashboard from "./pages/manager/ManagerDashboard";
 import ManagerProjects from "./pages/manager/ManagerProjects";
