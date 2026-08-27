@@ -39,13 +39,9 @@ public class SecurityConfig {
 
 		CorsConfiguration configuration = new CorsConfiguration();
 
-		configuration.setAllowedOrigins(
-			    List.of(
-			        "http://localhost:5173",
-			        "https://project-management-system-k92yrshda-harsha-s-team2.vercel.app",
-			        "https://project-management-system-one-chiv.vercel.app"
-			    )
-			);
+		configuration.setAllowedOrigins(List.of("http://localhost:5173",
+				"https://project-management-system-k92yrshda-harsha-s-team2.vercel.app",
+				"https://project-management-system-one-chiv.vercel.app"));
 
 		configuration.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
 
@@ -72,6 +68,9 @@ public class SecurityConfig {
 				.sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
 
 				.authorizeHttpRequests(auth -> auth
+
+						// Allow CORS preflight requests
+						.requestMatchers(org.springframework.http.HttpMethod.OPTIONS, "/**").permitAll()
 
 						// Authentication
 						.requestMatchers("/api/auth/**").permitAll()
