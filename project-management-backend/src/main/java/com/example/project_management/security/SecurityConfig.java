@@ -86,6 +86,8 @@ public class SecurityConfig {
 						.hasAnyRole("SUPER_ADMIN", "PROJECT_ADMIN", "PROJECT_MANAGER", "TEAM_LEAD", "EMPLOYEE")
 
 						// Everything else
+						// Everything else
+						.requestMatchers("/").permitAll()
 						.anyRequest().authenticated())
 
 				.addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);
